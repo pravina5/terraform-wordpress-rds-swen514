@@ -1,3 +1,10 @@
+terraform {
+  backend "s3" {
+    bucket         = "terraform-wordpress-rds-state-bucket-swen514"
+    key            = "terraform.tfstate"
+    region         = "us-east-2"
+  }
+}
 # Create VPC and subnets from module
 module "vpc" {
   source = "../vpc_network"
